@@ -1,4 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# RideBase - Blockchain-Powered Ride Sharing Platform
+
+A modern ride-sharing application built with Next.js, integrating blockchain technology for secure and transparent transactions. The platform allows users to connect their crypto wallets, select pickup and dropoff locations, and complete ride bookings with cryptocurrency payments.
+
+## Features
+
+- **Interactive Map Interface**: Powered by Mapbox for real-time location selection and ride tracking
+- **Blockchain Integration**: Connect your Web3 wallet (Metamask) for secure payments
+- **Location Services**: Search for locations and get accurate ride duration and pricing
+- **Responsive Design**: Optimized for both desktop and mobile experiences
+- **Sanity CMS Backend**: User data management with Sanity.io
+
+## Tech Stack
+
+- **Frontend**: Next.js, React.js, TailwindCSS
+- **Maps & Geolocation**: Mapbox GL, Mapbox Geocoder
+- **Blockchain**: Ethereum (ethers.js), Web3 integration
+- **Backend**: Sanity.io Content Management System
+- **Authentication**: Web3 wallet authentication (Metamask)
 
 ## Getting Started
 
@@ -12,25 +30,47 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Environment Variables
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Create a `.env.local` file in the root directory with the following variables:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```
+NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN=your_mapbox_token
+NEXT_PUBLIC_SANITY_PROJECT_ID=your_sanity_project_id
+NEXT_PUBLIC_SANITY_DATASET=your_sanity_dataset
+NEXT_PUBLIC_SANITY_API_VERSION=your_sanity_api_version
+```
+
+## Project Structure
+
+- `/components`: React components for the UI
+- `/context`: Context providers for state management
+- `/pages`: Application routes and API endpoints
+- `/public`: Static assets
+- `/styles`: Global styles and TailwindCSS configuration
+- `/src/sanity`: Sanity.io configuration and schemas
+
+## Main Pages
+
+- **Home (`/`)**: Landing page showcasing the application features
+- **Ride (`/ride`)**: Main interface for booking rides with map and location selection
+
+## API Routes
+
+- **/api/map**: Endpoints for location coordinates and ride duration calculations
+- **/api/db**: Endpoints for Sanity database operations
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To learn more about the technologies used:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Mapbox GL JS Documentation](https://docs.mapbox.com/mapbox-gl-js/api/)
+- [Ethers.js Documentation](https://docs.ethers.io/)
+- [Sanity.io Documentation](https://www.sanity.io/docs)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
+## Deployment
 
 Deployed on https://ride-base.vercel.app/
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This application is deployed on Vercel, the platform from the creators of Next.js.
